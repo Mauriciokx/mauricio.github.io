@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+</head>
+<body class="bg-gradient-to-r from-purple-200 to-blue-300 min-h-screen">
+
+<div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="bg-white w-64 p-6 space-y-6 shadow-lg">
+        <div class="flex items-center space-x-3">
+            <span class="text-xl font-bold">⚡ edu</span>
+        </div>
+        <nav class="space-y-4">
+            <a href="#" class="block text-gray-700 hover:text-black">📅 Schedule</a>
+            <a href="#" class="block text-gray-700 hover:text-black">📊 Progress</a>
+            <a href="#" class="block text-gray-700 hover:text-black">✉️ Messages</a>
+            <a href="#" class="block text-gray-700 hover:text-black">⚙️ Settings</a>
+        </nav>
+        <a href="#" class="block text-red-500 hover:text-red-700">🚪 Log out</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+        <!-- Top Bar -->
+        <header class="bg-white shadow-md p-4 flex justify-between items-center">
+            <input type="text" placeholder="Search" class="w-1/3 px-4 py-2 border rounded-md">
+            <div class="flex items-center space-x-4">
+                <span class="text-gray-600">👤 Kate G.</span>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <main class="flex-1 p-6 bg-white rounded-lg shadow-md m-4">
+            <!-- Hero Section -->
+            <div class="bg-black text-white p-6 rounded-lg mb-6">
+                <h2 class="text-2xl font-bold">Effective education!</h2>
+                <p class="mt-2">Learning is easy and effective with us. Open the panel and watch your progress grow!</p>
+            </div>
+
+            <!-- Events Section -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4">Events</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-gray-100 p-4 rounded-lg text-center">
+                        <h4 class="text-lg font-bold">26.02</h4>
+                        <p>18:00 - 19:30</p>
+                        <p class="text-gray-600">UX/UI Workshop</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg text-center">
+                        <h4 class="text-lg font-bold">02.03</h4>
+                        <p>18:00 - 19:30</p>
+                        <p class="text-gray-600">English Lecture</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg text-center">
+                        <h4 class="text-lg font-bold">07.03</h4>
+                        <p>18:00 - 19:30</p>
+                        <p class="text-gray-600">Business Lecture</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Section with Chart -->
+            <div class="mb-6">
+                <h3 class="text-xl font-bold mb-4">Timing & Progress</h3>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <canvas id="progressChart" class="w-full h-64"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Right Sidebar -->
+    <aside class="w-72 p-6 space-y-6 bg-white shadow-lg">
+        <h3 class="text-xl font-bold">Your Courses</h3>
+        <div class="space-y-4">
+
+            <button class="w-full flex justify-between items-center bg-gray-100 hover:bg-gray-200 p-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-md">
+                <p class="text-lg font-bold">🎨 Art</p>
+                <div class="flex items-center">
+                    <p class="text-gray-600 mr-2">35 hrs</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                </div>
+            </button>
+            <button class="w-full flex justify-between items-center bg-gray-100 hover:bg-gray-200 p-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-md">
+                <p class="text-lg font-bold">💼 Business</p>
+                <div class="flex items-center">
+                    <p class="text-gray-600 mr-2">40 hrs</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                </div>
+            </button>
+            <button class="w-full flex justify-between items-center bg-gray-100 hover:bg-gray-200 p-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-md">
+                <p class="text-lg font-bold">🔬 Science</p>
+                <div class="flex items-center">
+                    <p class="text-gray-600 mr-2">25 hrs</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                </div>
+            </button>
+            <button class="w-full flex justify-between items-center bg-gray-100 hover:bg-gray-200 p-4 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-sm hover:shadow-md">
+                <p class="text-lg font-bold">📐 Mathematics</p>
+                <div class="flex items-center">
+                    <p class="text-gray-600 mr-2">15 hrs</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                    </svg>
+                </div>
+            </button>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex justify-center">
+                <img src="https://static.vecteezy.com/system/resources/previews/008/878/175/non_2x/ring-geometric-shape-3d-illustration-free-png.png"Premium Icon" class="w-20 h-20 object-contain">
+            </div>
+            <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                <span>💎</span>
+                <span>Upgrade to Premium</span>
+                <span>💎</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+            </button>
+        </div>
+    </aside>
+</div>
+
+<!-- Chart Script -->
+<script>
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    const progressChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Computer Science', 'Science', 'Business'],
+            datasets: [{
+                label: 'Progress (%)',
+                data: [37, 83, 51],
+                backgroundColor: ['#4F46E5', '#10B981', '#F59E0B'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
