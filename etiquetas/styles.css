@@ -1,0 +1,89 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Encabezados */
+h2 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #555;
+    color: white;
+}
+
+/* Formularios */
+form {
+    margin-top: 10px;
+}
+
+input, textarea, select, button {
+    display: block;
+    margin-top: 5px;
+    padding: 8px;
+}
+
+/* Listas */
+ul, ol {
+    margin-left: 20px;
+}
+
+/* Enlaces */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para etiquetas semánticas */
+header, main, footer, section, article, aside {
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: white; /* Asegura un buen contraste */
+}
+
+header {
+    background-color: #1e3a5f;
+}
+
+main {
+    background-color: #2c3e50;
+}
+
+section {
+    background-color: #34495e;
+}
+
+article {
+    background-color: #2d3436;
+}
+
+aside {
+    background-color: #8e44ad;
+}
+
+footer {
+    background-color: #1b2631;
+    text-align: center;
+}

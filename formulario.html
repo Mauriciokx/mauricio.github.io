@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts Settings</title>
+</head>
+<body>
+    <h1>Account Settings</h1>
+    <form>
+        <fieldset>
+            <legend>Basics</legend>
+            <label>Email address: <input type="email" name="email"></label><br>
+            <label>Password: <input type="password" name="password"></label><br>
+            <label>Country: <select name="country">
+                <option value="">Mexico</option>
+                <option value="">EEUU</option>
+                <option value="">España</option>
+            </select></label><br>
+            <label>Language: <select name="language">
+                <option value="">Español</option>
+                <option value="">Ingles</option>
+                <option value="">Frances</option>
+                <option value="">Portugues</option>
+            </select></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Profile</legend>
+            <label>First Name: <input type="text" name="first_name"></label><br>
+            <label>Last Name: <input type="text" name="last_name"></label><br>
+            <label>Picture: <input type="file" name="picture" accept="image/*"></label><br>
+            <label>Username: <input type="text" name="username"></label><br>
+            <label>About you: <textarea name="about"></textarea></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Billing</legend>
+            <label>Change Plan:</label><br>
+            <label for="plan_basic"><input type="radio" id="plan_basic" name="plan" value="basic"> Basic - 1GB uploads $5/mo</label><br>
+            <label for="plan_essential"><input type="radio" id="plan_essential" name="plan" value="essential"> Essential - 5GB uploads $10/mo</label><br>
+            <label for="plan_premium"><input type="radio" id="plan_premium" name="plan" value="premium"> Premium - 15GB uploads $20/mo</label><br>
+            <label>Payment method: <input type="text" name="payment_method"></label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Notifications</legend>
+            <label><input type="checkbox" name="notificaciones" value="account_activity"> Account Activity</label><br>
+            <label><input type="checkbox" name="notificaciones" value="new_for_you"> New For You</label><br>
+            <label><input type="checkbox" name="notificaciones" value="meetups"> Meetups Near You</label><br>
+            <label><input type="checkbox" name="notificaciones" value="company_news"> Company News</label><br>
+            <label><input type="checkbox" name="notificaciones" value="weekly_jobs"> Weekly Jobs</label>
+        </fieldset>
+
+        <button type="submit">Save Settings</button>
+        <button type="reset">Cancel</button>
+    </form>
+</body>
+</html>
